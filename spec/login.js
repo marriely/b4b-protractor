@@ -70,7 +70,7 @@ describe('Login no b4b', function() {
         login.btn_entrar.click();
         browser.sleep(5000);
         console.log("Passou pelo login com falha");
-
+        expect(browser.getCurrentUrl()).toBe('https://teste.botfactory.newwaycorp.io/credentials/login');
   
   }); // fim do it falha
 

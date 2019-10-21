@@ -1,7 +1,10 @@
 var Login = require('../page-objects/po_login')
 
+// apaga a chave do local storage (logout)
+// localStorage.removeItem('accessToken');
+// browser.restart();
+
 describe('Login no b4b', function() {
-  console.log('teste1');
   var login
 
   beforeEach( function() {

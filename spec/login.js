@@ -38,7 +38,7 @@ describe('Login no b4b', function() {
 });
      
 
-    it('Login com sucesso - Usuário e senha válido', function() {
+  it('Login com sucesso - Usuário e senha válido', function() {
           
       login.email.sendKeys('qateste@teste.com.br');
       login.senha.sendKeys('123456');
@@ -72,6 +72,17 @@ describe('Login no b4b', function() {
         console.log("Passou pelo login com falha");
         expect(browser.getCurrentUrl()).toBe('https://teste.botfactory.newwaycorp.io/credentials/login');
   
+  }); // fim do it falha
+
+  it('Deve falhar ao fazer o login com email inválido', function() {  
+    
+    login.email.sendKeys('novo');
+    login.senha.sendKeys('123456');
+    login.btn_entrar.click();
+    browser.sleep(5000);
+    console.log("Passou pelo login com falha");
+    expect(browser.getCurrentUrl()).toBe('https://teste.botfactory.newwaycorp.io/credentials/login');
+
   }); // fim do it falha
 
   it('Deve falhar ao fazer o login com os campos em branco', function() {

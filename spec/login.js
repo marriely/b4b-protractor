@@ -1,7 +1,7 @@
 var Login = require('../page-objects/po_login')
 
 describe('Login no b4b', function() {
-
+  console.log('teste1');
   var login
 
   beforeEach( function() {

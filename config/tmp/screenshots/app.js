@@ -1898,6 +1898,136 @@ app.controller('ScreenshotReportController', ['$scope', '$http', 'TitleService',
         ],
         "timestamp": 1571669638240,
         "duration": 5795
+    },
+    {
+        "description": "Login com sucesso alteração|Login no b4b",
+        "passed": true,
+        "pending": false,
+        "os": "windows nt",
+        "sessionId": "e65d63526a291ac083fcfb1446823276",
+        "instanceId": 12848,
+        "browser": {
+            "name": "chrome",
+            "version": "77.0.3865.120"
+        },
+        "message": "Passed.",
+        "trace": "",
+        "browserLogs": [
+            {
+                "level": "SEVERE",
+                "message": "https://app.mktzap.com.br/webchat/7xjuawktqzizjwqo8xqc 177:47 Uncaught TypeError: Cannot set property 'onclick' of null",
+                "timestamp": 1571670189704,
+                "type": ""
+            },
+            {
+                "level": "SEVERE",
+                "message": "https://teste.botfactory.newwaycorp.io/js/chunk-vendors.e860caad.js 7 WebSocket connection to 'wss://api.botfactory.newwaycorp.io/socket.io/?EIO=3&transport=websocket&sid=jmkyiCfwQ8ram9-AABW2' failed: Error during WebSocket handshake: Unexpected response code: 400",
+                "timestamp": 1571670196098,
+                "type": ""
+            }
+        ],
+        "timestamp": 1571670188396,
+        "duration": 7741
+    },
+    {
+        "description": "Login com falha|Login no b4b",
+        "passed": true,
+        "pending": false,
+        "os": "windows nt",
+        "sessionId": "e65d63526a291ac083fcfb1446823276",
+        "instanceId": 12848,
+        "browser": {
+            "name": "chrome",
+            "version": "77.0.3865.120"
+        },
+        "message": "Passed",
+        "browserLogs": [
+            {
+                "level": "SEVERE",
+                "message": "https://app.mktzap.com.br/webchat/7xjuawktqzizjwqo8xqc 177:47 Uncaught TypeError: Cannot set property 'onclick' of null",
+                "timestamp": 1571670196421,
+                "type": ""
+            },
+            {
+                "level": "SEVERE",
+                "message": "https://bff.botfactory.newwaycorp.io/login - Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+                "timestamp": 1571670201882,
+                "type": ""
+            },
+            {
+                "level": "SEVERE",
+                "message": "https://teste.botfactory.newwaycorp.io/js/chunk-vendors.e860caad.js 39:18974 Uncaught t: Navigating to current location (\"/credentials/login\") is not allowed",
+                "timestamp": 1571670201883,
+                "type": ""
+            }
+        ],
+        "timestamp": 1571670196184,
+        "duration": 5721
+    },
+    {
+        "description": "Login com sucesso alteração|Login no b4b",
+        "passed": true,
+        "pending": false,
+        "os": "windows nt",
+        "sessionId": "0f280eb6025938f6e800587c5646a599",
+        "instanceId": 11872,
+        "browser": {
+            "name": "chrome",
+            "version": "77.0.3865.120"
+        },
+        "message": "Passed.",
+        "trace": "",
+        "browserLogs": [
+            {
+                "level": "SEVERE",
+                "message": "https://app.mktzap.com.br/webchat/7xjuawktqzizjwqo8xqc 177:47 Uncaught TypeError: Cannot set property 'onclick' of null",
+                "timestamp": 1571670430827,
+                "type": ""
+            },
+            {
+                "level": "SEVERE",
+                "message": "https://teste.botfactory.newwaycorp.io/js/chunk-vendors.e860caad.js 7 WebSocket connection to 'wss://api.botfactory.newwaycorp.io/socket.io/?EIO=3&transport=websocket&sid=BE-quQ896sHi9TGRABW4' failed: Error during WebSocket handshake: Unexpected response code: 400",
+                "timestamp": 1571670437628,
+                "type": ""
+            }
+        ],
+        "timestamp": 1571670428977,
+        "duration": 8695
+    },
+    {
+        "description": "Login com falha|Login no b4b",
+        "passed": true,
+        "pending": false,
+        "os": "windows nt",
+        "sessionId": "0f280eb6025938f6e800587c5646a599",
+        "instanceId": 11872,
+        "browser": {
+            "name": "chrome",
+            "version": "77.0.3865.120"
+        },
+        "message": "Passed",
+        "browserLogs": [
+            {
+                "level": "SEVERE",
+                "message": "https://app.mktzap.com.br/webchat/7xjuawktqzizjwqo8xqc 177:47 Uncaught TypeError: Cannot set property 'onclick' of null",
+                "timestamp": 1571670438038,
+                "type": ""
+            },
+            {
+                "level": "SEVERE",
+                "message": "https://bff.botfactory.newwaycorp.io/login - Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+                "timestamp": 1571670443704,
+                "type": ""
+            },
+            {
+                "level": "SEVERE",
+                "message": "https://teste.botfactory.newwaycorp.io/js/chunk-vendors.e860caad.js 39:18974 Uncaught t: Navigating to current location (\"/credentials/login\") is not allowed",
+                "timestamp": 1571670443704,
+                "type": ""
+            }
+        ],
+        "timestamp": 1571670437748,
+        "duration": 5981
     }
 ];
 

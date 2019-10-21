@@ -14,7 +14,7 @@ describe('Login no b4b', function() {
 
   afterEach(function() {
     console.log("passando pelo afterEach");
-   
+   // referencia https://code-examples.net/en/q/1715a20
     function getWindowLocation() {
       return window.location;
     }
@@ -36,11 +36,9 @@ describe('Login no b4b', function() {
   });
 
 });
-   
+     
 
-  
-
-    it('Login com sucesso alteração', function() {
+    it('Login com sucesso - Usuário e senha válido', function() {
           
       login.email.sendKeys('qateste@teste.com.br');
       login.senha.sendKeys('123456');
@@ -65,17 +63,27 @@ describe('Login no b4b', function() {
       console.log("deu certo a comparaçao");
     })// it com sucesso
 
-  it('Login com falha', function() {
-        
+  it('Deve falhar ao fazer o login com senha inválida', function() {  
     
-
         login.email.sendKeys('qateste@teste.com.br');
         login.senha.sendKeys('123456789');
         login.btn_entrar.click();
         browser.sleep(5000);
         console.log("Passou pelo login com falha");
+
   
   }); // fim do it falha
+
+  it('Deve falhar ao fazer o login com os campos em branco', function() {
+        
+    login.email.sendKeys('');
+    login.senha.sendKeys('');
+    login.btn_entrar.click();
+    browser.sleep(5000);
+    console.log("Passou pelo login em branco");
+    expect(login.mensagem_obrigatorio.getText()).toBe('Por favor preencha este campo.');
+
+}); // fim do it em bracno
 
       
 

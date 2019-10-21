@@ -6,6 +6,8 @@ exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
     specs: ['../spec/login.js'],
 
+   
+    
 
     onPrepare: function() {
       // Add a screenshot reporter and store screenshots to `/tmp/screenshots`:
@@ -15,7 +17,7 @@ exports.config = {
           takeScreenShotsOnlyForFailedSpecs: true,
           disableScreenshots: false,
           docTitle: 'reporter b4b',
-          docName: 'index.html'
+          docName: 'index.html',
           
        }).getJasmine2Reporter());
     },

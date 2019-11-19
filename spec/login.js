@@ -8,7 +8,10 @@ describe('Login no b4b', function() {
   beforeEach( function() {
     console.log("passando pelo beforeEach");
     login = new Login();
-    browser.driver.get('https://teste.botfactory.newwaycorp.io'); 
+    browser.driver.get('https://app.builder4bots.com.br'); 
+    browser.driver.manage().window().maximize();
+    //https://app.builder4bots.com.br/ - produção
+   // https://teste.botfactory.newwaycorp.io - teste
     browser.ignoreSynchronization = true; //preciso dessa linha, pq o b4b não é angular
   }); // termina o before each
 
@@ -40,13 +43,13 @@ describe('Login no b4b', function() {
 
   it('Login com sucesso - Usuário e senha válido', function() {
           
-      login.email.sendKeys('qateste@teste.com.br');
+      login.email.sendKeys('marriely@teste.com.br');
       login.senha.sendKeys('123456');
       login.btn_entrar.click();
 
       console.log("Passou pelo login sucesso");
 
-      element.all(by.className('el-input__inner')).count().then((contador)=>{
+     /* element.all(by.className('el-input__inner')).count().then((contador)=>{
         console.log(contador);
         for (let i =0; i<contador;++i){
           element.all(by.className('el-input__inner')).get(i).getAttribute('placeholder').then((texto)=>{
@@ -56,10 +59,10 @@ describe('Login no b4b', function() {
 
         } })//ver o nome do elemento
         
-      //=> isso é mesma coisa que o function
+      //=> isso é mesma coisa que o function - apoio para quando os elementos na tela tem o mesmo nome*/
 
       browser.sleep(5000);
-      expect(browser.getCurrentUrl()).toBe('https://teste.botfactory.newwaycorp.io/flows/');
+      expect(browser.getCurrentUrl()).toBe('https://app.builder4bots.com.br/flows/');
       console.log("deu certo a comparaçao");
     })// it com sucesso
 
@@ -70,7 +73,7 @@ describe('Login no b4b', function() {
         login.btn_entrar.click();
         browser.sleep(5000);
         console.log("Passou pelo login com falha");
-        expect(browser.getCurrentUrl()).toBe('https://teste.botfactory.newwaycorp.io/credentials/login');
+        expect(browser.getCurrentUrl()).toBe('https://app.builder4bots.com.br/credentials/login');
   
   }); // fim do it falha
 
@@ -81,7 +84,7 @@ describe('Login no b4b', function() {
     login.btn_entrar.click();
     browser.sleep(5000);
     console.log("Passou pelo login com falha");
-    expect(browser.getCurrentUrl()).toBe('https://teste.botfactory.newwaycorp.io/credentials/login');
+    expect(browser.getCurrentUrl()).toBe('https://app.builder4bots.com.br/credentials/login');
 
   }); // fim do it falha
 

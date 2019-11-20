@@ -9,17 +9,5 @@ exports.config = {
    
     
 
-  /*  onPrepare: function() {
-      // Add a screenshot reporter and store screenshots to `/tmp/screenshots`:
-     jasmine.getEnv().addReporter(new HtmlReporter({
-          baseDirectory: 'tmp/screenshots',
-          screenshotsSubfolder: 'images',
-          takeScreenShotsOnlyForFailedSpecs: true,
-          disableScreenshots: false,
-          docTitle: 'reporter b4b',
-          docName: 'index.html',
-          
-       }).getJasmine2Reporter());
-    },*/
 
   };

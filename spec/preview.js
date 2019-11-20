@@ -15,7 +15,7 @@ describe('Executar preview', function() {
            
         login.email.sendKeys('novo@teste.com.br');
         login.senha.sendKeys('123456');
-        login.btn_entrar.click();
+        element(by.className('el-button credentials-actions-button el-button--default color-default credentials-actions-button-green')).click();
         console.log("Passou pelo login sucesso");
 
     });
@@ -25,10 +25,10 @@ describe('Executar preview', function() {
         browser.sleep(5000);
         //expect(browser.getCurrentUrl()).toBe('https://teste.botfactory.newwaycorp.io/flows/');
 
-    //  preview.novo_fluxo.click();
+        //  preview.novo_fluxo.click();
        
-    element.all(by.className('[data-test=flowNewButton]')).click();
-       console.log("passou pelo it")
+        element.all(by.className('[data-test=flowNewButton]')).click();
+        console.log("passou pelo it")
        
         //clicou no novo fluxo
   

@@ -1,14 +1,15 @@
 var Login = require('../page-objects/po_login')
 
-
-
 describe('Login no b4b', function() {
   var login
+
+  var urlExpectFlow = "https://teste.botfactory.newwaycorp.io/flows/"
+  var urlExpectLogin = "https://teste.botfactory.newwaycorp.io/credentials/login"
 
   beforeEach( function() {
     console.log("passando pelo beforeEach");
     login = new Login();
-    browser.driver.get('https://app.builder4bots.com.br'); 
+    browser.driver.get('https://teste.botfactory.newwaycorp.io'); 
     browser.driver.manage().window().maximize();
     //https://app.builder4bots.com.br/ - produção
    // https://teste.botfactory.newwaycorp.io - teste
@@ -28,41 +29,28 @@ describe('Login no b4b', function() {
     }
 
     return browser.executeScript(getWindowLocation).then(function(location) {
-    // NB If no page is loaded in the scneario then calling clearStorage will cause exception
-    // so guard against this by checking hostname (If no page loaded then hostname == '')
     if (location.hostname.length > 0) {
       return browser.executeScript(clearStorage);
     }
     else {
       return Promise.resolve();
     }
-  });
+    });// função para limpar o storage, hoje no b2b não tem o logout
 
 });
      
 
   it('Login com sucesso - Usuário e senha válido', function() {
           
-      login.email.sendKeys('marriely@teste.com.br');
+      login.email.sendKeys('novo@teste.com.br');
       login.senha.sendKeys('123456');
       login.btn_entrar.click();
 
       console.log("Passou pelo login sucesso");
 
-     /* element.all(by.className('el-input__inner')).count().then((contador)=>{
-        console.log(contador);
-        for (let i =0; i<contador;++i){
-          element.all(by.className('el-input__inner')).get(i).getAttribute('placeholder').then((texto)=>{
-            console.log(texto);
-            console.log(i);
-          })
-
-        } })//ver o nome do elemento
-        
-      //=> isso é mesma coisa que o function - apoio para quando os elementos na tela tem o mesmo nome*/
-
+     
       browser.sleep(5000);
-      expect(browser.getCurrentUrl()).toBe('https://app.builder4bots.com.br/flows/');
+      expect(browser.getCurrentUrl()).toBe(urlExpectFlow);
       console.log("deu certo a comparaçao");
     })// it com sucesso
 
@@ -73,7 +61,7 @@ describe('Login no b4b', function() {
         login.btn_entrar.click();
         browser.sleep(5000);
         console.log("Passou pelo login com falha");
-        expect(browser.getCurrentUrl()).toBe('https://app.builder4bots.com.br/credentials/login');
+        expect(browser.getCurrentUrl()).toBe(urlExpectLogin);
   
   }); // fim do it falha
 
@@ -84,7 +72,7 @@ describe('Login no b4b', function() {
     login.btn_entrar.click();
     browser.sleep(5000);
     console.log("Passou pelo login com falha");
-    expect(browser.getCurrentUrl()).toBe('https://app.builder4bots.com.br/credentials/login');
+    expect(browser.getCurrentUrl()).toBe(urlExpectLogin);
 
   }); // fim do it falha
 
@@ -104,4 +92,4 @@ describe('Login no b4b', function() {
 console.log("Fim do teste");
      
     
-  })
+})

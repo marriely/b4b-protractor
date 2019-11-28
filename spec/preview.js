@@ -13,7 +13,7 @@ describe('Executar preview', function() {
         browser.ignoreSynchronization = true;
 
            
-        login.email.sendKeys('novo@teste.com.br');
+        element(by.css('[data-test="emailCredentialsLogin"]')).sendKeys('novo@teste.com.br');
         login.senha.sendKeys('123456');
         element(by.className('el-button credentials-actions-button el-button--default color-default credentials-actions-button-green')).click();
         console.log("Passou pelo login sucesso");
@@ -22,12 +22,13 @@ describe('Executar preview', function() {
 
     it('Novo fluxo', function() {  
         
-        browser.sleep(5000);
+        browser.sleep(10000);
         //expect(browser.getCurrentUrl()).toBe('https://teste.botfactory.newwaycorp.io/flows/');
 
         //  preview.novo_fluxo.click();
        
-        element.all(by.className('[data-test=flowNewButton]')).click();
+        element(by.className('el-card flows-card flows-add-new is-always-shadow')).click();
+        browser.sleep(10000);
         console.log("passou pelo it")
        
         //clicou no novo fluxo

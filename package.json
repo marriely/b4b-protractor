@@ -1,0 +1,25 @@
+{
+  "name": "b4b",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "chromedriver": "^78.0.1",
+    "protractor-beautiful-reporter": "^1.3.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "protractor config/conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marriely/b4b-protractor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marriely/b4b-protractor/issues"
+  },
+  "homepage": "https://github.com/marriely/b4b-protractor#readme"
+}

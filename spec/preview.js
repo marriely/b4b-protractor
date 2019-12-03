@@ -9,7 +9,10 @@ describe('Executar preview', function() {
         preview = new Preview();
         login = new Login();
         browser.driver.get('https://teste.botfactory.newwaycorp.io/'); 
-        browser.driver.manage().window().maximize();
+       // browser.driver.manage().window().maximize();
+        var width = 1200;
+        var height = 400;
+        browser.driver.manage().window().setSize(width, height);
         browser.ignoreSynchronization = true;
 
            

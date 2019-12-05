@@ -4,7 +4,7 @@ var Login = require('../page-objects/po_login')
 describe('Executar preview', function() {
     var preview
 
-    beforeEach( function() {
+    beforeEach( async function() {
         console.log("passando pelo beforeEach");
         preview = new Preview();
         login = new Login();
@@ -16,27 +16,27 @@ describe('Executar preview', function() {
         browser.ignoreSynchronization = true;
 
            
-        login.email.sendKeys('novo@teste.com.br');
-        login.senha.sendKeys('123456');
-        login.btn_entrar.click();
+        await login.email.sendKeys('novo@teste.com.br');
+        await  login.senha.sendKeys('123456');
+        await login.btn_entrar.click();
         console.log("Passou pelo login sucesso");
 
     });
 
-    it('Novo fluxo', function() {  
+    it('Novo fluxo', async function() {  
         
         browser.sleep(2000);
         //expect(browser.getCurrentUrl()).toBe('https://teste.botfactory.newwaycorp.io/flows/');
 
-        preview.novo_fluxo.click();       
-        browser.sleep(2000);
-        preview.primeiro_state.click();
-        preview.mensagem.sendKeys('Oi teste.');
-        browser.sleep(2000);
-        preview.btn_salvar.click();
-        browser.sleep(2000);
-        preview.btn_preview.click();
-        browser.sleep(2000);
+        await preview.novo_fluxo.click();       
+        await browser.sleep(2000);
+        await preview.primeiro_state.click();
+        await preview.mensagem.sendKeys('Oi teste.');
+        await browser.sleep(2000);
+        await preview.btn_salvar.click();
+        await browser.sleep(2000);
+        await preview.btn_preview.click();
+        await browser.sleep(2000);
         expect(preview.mensagem_preview.getText()).toBe('Oi teste.');
         console.log("passou pelo it");
        
